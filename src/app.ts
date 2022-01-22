@@ -12,6 +12,7 @@ createConnection().then(async connection => {
 
     // create express app
     const app = express();
+    const port = process.env.HTTP_PORT || 3002
     app.use(bodyParser.json());
 
     // register all application routes
@@ -24,8 +25,8 @@ createConnection().then(async connection => {
     });
 
     // run app
-    app.listen(3000);
+    app.listen(port);
 
-    console.log("Express application is up and running on port 3000");
+    console.log(`Express application is up and running on port ${port}`);
 
 }).catch(error => console.log("TypeORM connection error: ", error));

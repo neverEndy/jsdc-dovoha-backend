@@ -45,9 +45,10 @@ var routes_1 = require("./routes");
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests
 (0, typeorm_1.createConnection)().then(function (connection) { return __awaiter(void 0, void 0, void 0, function () {
-    var app;
+    var app, port;
     return __generator(this, function (_a) {
         app = express();
+        port = process.env.HTTP_PORT || 3002;
         app.use(bodyParser.json());
         // register all application routes
         routes_1.AppRoutes.forEach(function (route) {
@@ -58,8 +59,8 @@ var routes_1 = require("./routes");
             });
         });
         // run app
-        app.listen(3000);
-        console.log("Express application is up and running on port 3000");
+        app.listen(port);
+        console.log("Express application is up and running on port ".concat(port));
         return [2 /*return*/];
     });
 }); }).catch(function (error) { return console.log("TypeORM connection error: ", error); });
