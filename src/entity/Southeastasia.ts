@@ -17,10 +17,10 @@ export class Southeastasia {
     country: string;
 
     @Column({nullable: true})
-    lon: string;
+    lon: number;
 
     @Column({nullable: true})
-    lat: string;
+    lat: number;
 
     @Column({nullable: true})
     address: string;

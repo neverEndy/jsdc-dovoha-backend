@@ -4,6 +4,7 @@ import {Request, Response} from "express";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {AppRoutes} from "./routes";
+import * as cors from 'cors'
 
 // create connection with database
 // note that it's not active database connection
@@ -12,6 +13,9 @@ createConnection().then(async connection => {
 
     // create express app
     const app = express();
+    const options: cors.CorsOptions = {origin: '*'};
+    app.use(bodyParser.json());
+    app.use(cors(options)); /* NEW */
     const port = process.env.HTTP_PORT || 3002
     app.use(bodyParser.json());
 

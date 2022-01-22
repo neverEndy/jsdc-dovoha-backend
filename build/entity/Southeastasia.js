@@ -34,11 +34,11 @@ var Southeastasia = /** @class */ (function () {
     ], Southeastasia.prototype, "country", void 0);
     __decorate([
         (0, typeorm_1.Column)({ nullable: true }),
-        __metadata("design:type", String)
+        __metadata("design:type", Number)
     ], Southeastasia.prototype, "lon", void 0);
     __decorate([
         (0, typeorm_1.Column)({ nullable: true }),
-        __metadata("design:type", String)
+        __metadata("design:type", Number)
     ], Southeastasia.prototype, "lat", void 0);
     __decorate([
         (0, typeorm_1.Column)({ nullable: true }),

@@ -41,13 +41,17 @@ var typeorm_1 = require("typeorm");
 var express = require("express");
 var bodyParser = require("body-parser");
 var routes_1 = require("./routes");
+var cors = require("cors");
 // create connection with database
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests
 (0, typeorm_1.createConnection)().then(function (connection) { return __awaiter(void 0, void 0, void 0, function () {
-    var app, port;
+    var app, options, port;
     return __generator(this, function (_a) {
         app = express();
+        options = { origin: '*' };
+        app.use(bodyParser.json());
+        app.use(cors(options)); /* NEW */
         port = process.env.HTTP_PORT || 3002;
         app.use(bodyParser.json());
         // register all application routes
