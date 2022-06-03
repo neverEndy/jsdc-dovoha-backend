@@ -5,6 +5,7 @@ import * as MsWalkPOIController from '../controller/MsWalkPOIController'
 import * as MsTownController from '../controller/MsTownController'
 import * as MsVillageController from '../controller/MsVillageController'
 import * as SoutheastasiaController from '../controller/SoutheastasiaController'
+import * as GoodMapPOIController from '../controller/GoodMapPOIController'
 
 /**
  * All application routes.
@@ -44,5 +45,10 @@ export const AppRoutes = [
         path: "/Southeastasia",
         method: "get",
         action: SoutheastasiaController.getAll
+    },
+    {
+        path: "/GoodMapPOI",
+        method: "get",
+        action: GoodMapPOIController.getAll
     }
 ];

@@ -8,6 +8,7 @@ var MsWalkPOIController = require("../controller/MsWalkPOIController");
 var MsTownController = require("../controller/MsTownController");
 var MsVillageController = require("../controller/MsVillageController");
 var SoutheastasiaController = require("../controller/SoutheastasiaController");
+var GoodMapPOIController = require("../controller/GoodMapPOIController");
 /**
  * All application routes.
  */
@@ -46,5 +47,10 @@ exports.AppRoutes = [
         path: "/Southeastasia",
         method: "get",
         action: SoutheastasiaController.getAll
+    },
+    {
+        path: "/GoodMapPOI",
+        method: "get",
+        action: GoodMapPOIController.getAll
     }
 ];
