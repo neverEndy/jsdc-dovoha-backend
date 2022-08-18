@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "export NODE_ENV=development && npx tsc && node ./build/app.js",
     "start": "export NODE_ENV=production && npx tsc && node ./build/app.js",
+    "migrate": "export NODE_ENV=production && typeorm migration:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

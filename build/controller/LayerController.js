@@ -45,7 +45,6 @@ var getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, func
         switch (_a.label) {
             case 0:
                 layerRepo = (0, typeorm_1.getRepository)(Layer_1.Layer);
-                console.log(layerRepo.metadata.tableName);
                 return [4 /*yield*/, layerRepo.find()];
             case 1:
                 layers = _a.sent();
