@@ -10,7 +10,7 @@ import * as cors from 'cors'
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests
 createConnection().then(async connection => {
-
+    await connection.synchronize()
     // create express app
     const app = express();
     const options: cors.CorsOptions = {origin: '*'};
