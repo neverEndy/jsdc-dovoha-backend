@@ -20,8 +20,9 @@ createConnection().then(async connection => {
     app.use(bodyParser.json());
 
     // register all application routes
+    const root_url = '/webgis/minsyong/backend'
     AppRoutes.forEach(route => {
-        app[route.method](route.path, (request: Request, response: Response, next: Function) => {
+        app[route.method](root_url + route.path, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
                 .catch(err => next(err));
